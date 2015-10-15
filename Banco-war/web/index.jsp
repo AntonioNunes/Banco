@@ -20,8 +20,7 @@
                 <input type="hidden" name="command" value="LoginCommand"/>
                 <p>Número da conta:<br><input type="text" name="nro_conta" required/>*</p>
                 <p>Senha:<br><input type="password" name="senha" required/>*</p>
-                <p><input type="submit" value="Login"</p>
-                
+                <p><input type="submit" value="Login"</p>     
             </form>
         </section>
     </body>

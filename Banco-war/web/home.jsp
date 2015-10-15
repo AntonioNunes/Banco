@@ -13,11 +13,16 @@
     </head>
     <body>
         <h1>Bem-vindo ${clienteLogado.nome}</h1>
-        <ul>
-            <li><a href="contaPessoal.jsp"><input type="button" value="SaldoCommand" name="saldo" class="saldo"/></a></li>
-            <li><input type="button" value="SaqueCommand" name="saque" class="saque"/></li>
-            <li><input type="button" value="TransferenciaCommand" name="trans" class="trans"/></li>
-            <li><input type="button" value="LogoffCommand" name="logoff" class="logoff"/></li>
-        </ul>
+
+        <a href="contaPessoal.jsp"><input type="button" value="SaldoCommand" name="saldo" class="saldo"/></a>
+        <a href="SaquePessoal.jsp"><input type="button" value="SaqueCommand" name="saque" class="saque"/></a>
+        <input type="button" value="TransferenciaCommand" name="trans" class="trans"/>
+
+        <form method="POST" action="FrontController">
+
+            <input type="submit" value="LogoffCommand" />
+            <input type="hidden" name="command" value="LogoffCommand"/>
+
+        </form>
     </body>
 </html>

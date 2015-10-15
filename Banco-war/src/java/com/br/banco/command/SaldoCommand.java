@@ -18,7 +18,6 @@ public class SaldoCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         
-        request.getSession().getAttribute("saldo");
         
         RequestDispatcher rd = request.getRequestDispatcher("/contaPessoal.jsp");
     

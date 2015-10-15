@@ -19,7 +19,7 @@ public class LogoffCommand implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         
         request.getSession().invalidate();
-       
+        
         RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
         
         try {

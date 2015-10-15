@@ -13,7 +13,10 @@ public class SaqueCommand implements Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
+       
+        double Saldo = Double.parseDouble(request.getParameter("qtd_saldo"));
+       
         
-        }
+    }
     
 }

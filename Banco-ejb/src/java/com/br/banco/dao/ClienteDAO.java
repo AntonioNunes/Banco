@@ -30,4 +30,9 @@ public class ClienteDAO {
     public List<Cliente> read() {
         return clientes;
     }
+    
+    public Cliente update(Cliente c, double saldo){
+        c.setSaldo(saldo);
+    return c;
+    }
 }

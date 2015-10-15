@@ -14,11 +14,17 @@
     <body>
         <header>
             <h1>Conta pessoal, ${clienteLogado.nome}.</h1>
-            <input type="button" value="LogoffCommand" name="logoff" class="logoff"/>
+            
+            <form method="POST" action="FrontController">
+            <input type="hidden" name="command" value="LogoffCommand"/>
+            <input type="submit" value="Logoff Command" />
+            
+            </form>
         </header>
             <nav>
-                <div class="saldo">${saldo}</div>
+                <div class="saldo">R$ ${clienteLogado.saldo}0</div>
             
             </nav>
+                <a href="home.jsp"><input type="button" value="Voltar"/></a>
     </body>
 </html>
