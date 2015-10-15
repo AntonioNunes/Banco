@@ -5,6 +5,7 @@
  */
 package com.br.banco.command;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,7 +17,11 @@ public class SaldoCommand implements Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        request.getSession().getAttribute("saldo");
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/contaPessoal.jsp");
+    
     }
     
 }

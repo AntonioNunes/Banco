@@ -14,10 +14,10 @@
     <body>
         <h1>Bem-vindo ${clienteLogado.nome}</h1>
         <ul>
-            <li><input type="button" value="Saldo" name="saldo" class="saldo"/></li>
-            <li><input type="button" value="Saque" name="saque" class="saque"/></li>
-            <li><input type="button" value="Transferencia" name="trans" class="trans"/></li>
-            <li><input type="button" value="Logoff" name="logoff" class="logoff"/></li>
+            <li><a href="contaPessoal.jsp"><input type="button" value="SaldoCommand" name="saldo" class="saldo"/></a></li>
+            <li><input type="button" value="SaqueCommand" name="saque" class="saque"/></li>
+            <li><input type="button" value="TransferenciaCommand" name="trans" class="trans"/></li>
+            <li><input type="button" value="LogoffCommand" name="logoff" class="logoff"/></li>
         </ul>
     </body>
 </html>
