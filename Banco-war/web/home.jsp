@@ -14,10 +14,10 @@
     <body>
         <h1>Bem-vindo ${clienteLogado.nome}</h1>
         <ul>
-            <li>Saldo</li>
-            <li>Saque</li>
-            <li>Transferencia</li>
-            <li>Logoff</li>
+            <li><input type="button" value="Saldo" name="saldo" class="saldo"/></li>
+            <li><input type="button" value="Saque" name="saque" class="saque"/></li>
+            <li><input type="button" value="Transferencia" name="trans" class="trans"/></li>
+            <li><input type="button" value="Logoff" name="logoff" class="logoff"/></li>
         </ul>
     </body>
 </html>

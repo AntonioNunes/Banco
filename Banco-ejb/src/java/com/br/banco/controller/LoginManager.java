@@ -1,5 +1,7 @@
 package com.br.banco.controller;
 
+import com.br.banco.dao.ClienteDAO;
+import com.br.banco.entity.Cliente;
 import com.br.banco.jms.sessionbeans.ProducerSessionbeanLocal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,8 +21,15 @@ public class LoginManager implements LoginManagerLocal {
 
     @Override
     public boolean auth(int usuario, String senha) {
+        boolean resposta = false;
 
-        boolean resposta = ((usuario == 2) && "123".equalsIgnoreCase(senha));
+        ClienteDAO dao = new ClienteDAO();
+        Cliente c = new Cliente(usuario, senha);
+        Cliente encontrado = dao.readById(usuario);
+
+        if (encontrado != null && encontrado.getSenha().equals(c.getSenha())) {
+            resposta = true;
+        }
 
         if (resposta) {
             try {
@@ -35,6 +44,7 @@ public class LoginManager implements LoginManagerLocal {
                 Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+
         return resposta;
     }
 
