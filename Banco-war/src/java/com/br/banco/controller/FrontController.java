@@ -46,24 +46,6 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            /*if (command.startsWith("login")) {
-            int nroConta = Integer.parseInt(request.getParameter("nro_conta"));
-            
-            boolean verifica = loginManager.auth(nroConta, senha);
-            if (verifica) {
-            Cliente cliente = new Cliente();
-            ClienteDAO dao = new ClienteDAO();
-            cliente = dao.readById(nroConta);
-            request.getSession().setAttribute("clienteLogado", cliente);
-            RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
-            request.getSession().setAttribute("username", usuario);
-            rd.forward(request, response);
-            } else {
-            RequestDispatcher rd1 = request.getRequestDispatcher("/index.jsp");
-            rd1.forward(request, response);
-            }
-            
-            }*/
             
             final String PACOTE = "com.br.banco.command.";
             String command = request.getParameter("command");
