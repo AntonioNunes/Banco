@@ -7,7 +7,7 @@ package com.br.banco.command;
 
 import com.br.banco.controller.LoginManagerLocal;
 import com.br.banco.dao.ClienteDAO;
-import com.br.banco.entity.Cliente;
+import com.br.banco.entities.Cliente;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

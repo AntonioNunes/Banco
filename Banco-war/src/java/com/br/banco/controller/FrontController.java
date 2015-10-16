@@ -1,8 +1,7 @@
 package com.br.banco.controller;
 
 import com.br.banco.command.Command;
-import com.br.banco.dao.ClienteDAO;
-import com.br.banco.entity.Cliente;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;

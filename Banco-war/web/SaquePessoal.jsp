@@ -24,7 +24,7 @@
         <section>
 
             <form method="POST" action="FrontController">
-                s<input type="hidden" name="command" value="SaqueCommand"/>
+                <input type="hidden" name="command" value="SaqueCommand"/>
                 <p>Quantidade a ser sacada:<br><input type="text" name="qtd_saldo" required/>*</p>  
                 <p><input type="submit" value="Sacar"</p> 
             </form>

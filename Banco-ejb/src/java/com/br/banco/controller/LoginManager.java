@@ -1,7 +1,7 @@
 package com.br.banco.controller;
 
 import com.br.banco.dao.ClienteDAO;
-import com.br.banco.entity.Cliente;
+import com.br.banco.entities.Cliente;
 import com.br.banco.jms.sessionbeans.ProducerSessionbeanLocal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,20 +20,22 @@ public class LoginManager implements LoginManagerLocal {
     private ProducerSessionbeanLocal producerSessionbean;
 
     @Override
-    public boolean auth(int usuario, String senha) {
+    public boolean auth(int nro_conta, String senha) {
+        
         boolean resposta = false;
 
         ClienteDAO dao = new ClienteDAO();
-        Cliente c = new Cliente(usuario, senha);
-        Cliente encontrado = dao.readById(usuario);
+        Cliente c = new Cliente(nro_conta, senha);
+        Cliente encontrado = dao.readById(nro_conta);
 
         if (encontrado != null && encontrado.getSenha().equals(c.getSenha())) {
             resposta = true;
         }
 
+        
         if (resposta) {
             try {
-                producerSessionbean.sendMessageToQueue("Usuario " + usuario + " Logado");
+                producerSessionbean.sendMessageToQueue("Usuario " + nro_conta + " Logado");
             } catch (JMSException ex) {
                 Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
             }
