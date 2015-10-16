@@ -16,4 +16,6 @@ import javax.jms.JMSException;
 public interface ProducerSessionbeanLocal {
     
         public void sendMessageToQueue(String message) throws JMSException;
+
+    void log(String msg);
 }

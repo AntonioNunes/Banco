@@ -30,6 +30,7 @@ public class FrontController extends HttpServlet {
     private String usuario;
     private String senha;
     private String command;
+    private String qtd_saldo;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,7 +45,6 @@ public class FrontController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
             
             final String PACOTE = "com.br.banco.command.";
             String command = request.getParameter("command");
@@ -87,7 +87,7 @@ public class FrontController extends HttpServlet {
         command = request.getParameter("command");
         usuario = request.getParameter("usuario");
         senha = request.getParameter("senha");
-
+        qtd_saldo = request.getParameter("qtd_saldo");
         processRequest(request, response);
     }
 

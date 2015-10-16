@@ -8,6 +8,7 @@ package com.br.banco.command;
 import com.br.banco.controller.LoginManagerLocal;
 import com.br.banco.dao.ClienteDAO;
 import com.br.banco.entities.Cliente;
+import com.br.banco.jms.sessionbeans.ProducerSessionbeanLocal;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,8 +21,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LoginCommand implements Command {
+    ProducerSessionbeanLocal producerSessionbean = lookupProducerSessionbeanLocal();
 
     LoginManagerLocal loginManager = lookupLoginManagerLocal();
+    
+    
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
@@ -38,6 +42,8 @@ public class LoginCommand implements Command {
             cliente = dao.readById(nroConta);
             
             request.getSession().setAttribute("clienteLogado", cliente);
+            
+            producerSessionbean.log("Cliente "+ cliente.getNome() + " logado com sucesso.");
             
             RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
             
@@ -63,6 +69,16 @@ public class LoginCommand implements Command {
         try {
             Context c = new InitialContext();
             return (LoginManagerLocal) c.lookup("java:global/Banco/Banco-ejb/LoginManager!com.br.banco.controller.LoginManagerLocal");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
+    }
+
+    private ProducerSessionbeanLocal lookupProducerSessionbeanLocal() {
+        try {
+            Context c = new InitialContext();
+            return (ProducerSessionbeanLocal) c.lookup("java:global/Banco/Banco-ejb/ProducerSessionbean!com.br.banco.jms.sessionbeans.ProducerSessionbeanLocal");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);

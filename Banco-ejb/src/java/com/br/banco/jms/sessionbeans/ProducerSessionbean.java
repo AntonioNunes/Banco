@@ -65,4 +65,16 @@ public class ProducerSessionbean implements ProducerSessionbeanLocal {
     {
         sendJMSMessageToBanco(message);
     }
+
+    @Override
+    public void log(String msg) {
+   
+        try {
+            sendMessageToQueue(msg);
+        } catch (JMSException ex) {
+            Logger.getLogger(ProducerSessionbean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
 }

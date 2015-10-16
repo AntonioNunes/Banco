@@ -1,0 +1,8 @@
+create table cliente (nro_conta int not null primary key generated always as identity(start with 1,increment by 1),
+nome varchar(50),
+senha varchar(20),
+saldo double);
+
+insert into cliente(nome,senha,saldo) values('Antonio nunes','123',1000.0);
+insert into cliente(nome,senha,saldo) values('Gilson Mito','456',2000.0);
+

@@ -25,7 +25,8 @@
 
             <form method="POST" action="FrontController">
                 <input type="hidden" name="command" value="SaqueCommand"/>
-                <p>Quantidade a ser sacada:<br><input type="text" name="qtd_saldo" required/>*</p>  
+                <p>Quantidade a ser sacada:<br><input type="text" name="qtd_saldo" required/>*</p> 
+                <input type="hidden" name="nro_conta" value="${clienteLogado.nroConta}"/>
                 <p><input type="submit" value="Sacar"</p> 
             </form>
 
