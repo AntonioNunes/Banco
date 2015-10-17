@@ -17,6 +17,7 @@
             
             <form method="POST" action="FrontController">
             <input type="hidden" name="command" value="LogoffCommand"/>
+            <input type="hidden" name="nro_conta" value="${clienteLogado.nroConta}"/>
             <input type="submit" value="Logoff Command" />
             
             </form>

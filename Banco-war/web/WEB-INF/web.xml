@@ -31,4 +31,28 @@
         <local>com.br.banco.jms.sessionbeans.ProducerSessionbeanLocal</local>
         <ejb-link>Banco-ejb.jar#ProducerSessionbean</ejb-link>
     </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>ProducerSessionbean1</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.br.banco.jms.sessionbeans.ProducerSessionbeanLocal</local>
+        <ejb-link>Banco-ejb.jar#ProducerSessionbean</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>ProducerSessionbean2</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.br.banco.jms.sessionbeans.ProducerSessionbeanLocal</local>
+        <ejb-link>Banco-ejb.jar#ProducerSessionbean</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>ProducerSessionbean3</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.br.banco.jms.sessionbeans.ProducerSessionbeanLocal</local>
+        <ejb-link>Banco-ejb.jar#ProducerSessionbean</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>ProducerSessionbean4</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.br.banco.jms.sessionbeans.ProducerSessionbeanLocal</local>
+        <ejb-link>Banco-ejb.jar#ProducerSessionbean</ejb-link>
+    </ejb-local-ref>
 </web-app>

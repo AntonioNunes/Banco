@@ -68,4 +68,12 @@ public class ClienteDAO implements DAO<Cliente> {
         em.close();
 
     }
+    public void updateSaldo(Cliente e) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Banco-ejbPU");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.setProperty("saldo", e);
+        em.getTransaction().commit();
+        em.close();
+    }
 }

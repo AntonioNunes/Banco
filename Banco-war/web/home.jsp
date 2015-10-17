@@ -14,13 +14,14 @@
     <body>
         <h1>Bem-vindo ${clienteLogado.nome}</h1>
 
-        <a href="contaPessoal.jsp"><input type="button" value="SaldoCommand" name="saldo" class="saldo"/></a>
-        <a href="SaquePessoal.jsp"><input type="button" value="SaqueCommand" name="saque" class="saque"/></a>
-        <input type="button" value="TransferenciaCommand" name="trans" class="trans"/>
+    <a href="contaPessoal.jsp"><input type="button" value="SaldoCommand" name="Command" class="saldo"/></a>
+            
+        <a href="SaquePessoal.jsp"><input type="button" value="Saque" name="SaqueCommand" class="saque"/></a>
+        <a href="transferencia.jsp"><input type="button" value="Transferencia" name="TransferenciaCommand" class="trans"/></a>
 
         <form method="POST" action="FrontController">
 
-            <input type="submit" value="LogoffCommand" />
+            <input type="submit" value="Logoff" name="LogoffCommand" />
             <input type="hidden" name="command" value="LogoffCommand"/>
 
         </form>

@@ -31,6 +31,8 @@ public class FrontController extends HttpServlet {
     private String senha;
     private String command;
     private String qtd_saldo;
+    private String nro_trans;
+    private String qtd_trans;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -88,6 +90,8 @@ public class FrontController extends HttpServlet {
         usuario = request.getParameter("usuario");
         senha = request.getParameter("senha");
         qtd_saldo = request.getParameter("qtd_saldo");
+        nro_trans = request.getParameter("nro_trans");
+        qtd_trans = request.getParameter("qtd_trans");
         processRequest(request, response);
     }
 

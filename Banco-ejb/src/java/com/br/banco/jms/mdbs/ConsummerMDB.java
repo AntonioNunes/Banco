@@ -33,7 +33,8 @@ import javax.jms.TextMessage;
 })
 public class ConsummerMDB implements MessageListener {
 
-    final String caminho = "C:\\Temp\\arquivobanco.txt";
+    //final String caminho = "C:\\Temp\\arquivobanco.txt";
+    final String caminho = "E:\\Mackenzie\\Banco\\arquivobanco.txt";
 
     public ConsummerMDB() {
     }
